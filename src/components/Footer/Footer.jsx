@@ -1,11 +1,11 @@
-import "../Footer/Footer.scss";
+import "./Footer.scss";
 
 function Footer() {
   return (
    <>
        <section className="footer">
-        <h2 className="wordmark">Snaps</h2>
         <ul className="footer__title-primary">
+        <h2 className="wordmark">Snaps</h2>
         <ul className="footer__primary">
             <li className="body">For photographers</li>
             <li className="body">Hire talent</li>

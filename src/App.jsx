@@ -1,11 +1,13 @@
 import "./App.scss";
 import "./main";
 import "./styles/partials/_global.scss";
-import Footer from "./components1/Footer1/Footer";
+import Hero from "./components/Hero/Hero";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
+    <Hero />
       <Footer />
     </>
   );
