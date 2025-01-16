@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import "./App.scss";
 import "./main";
 import "./styles/partials/_global.scss";
@@ -7,11 +9,21 @@ import MainContent from "./components/MainContent/MainContent";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+ 
+  const [filterOff, setFilterOff] = useState("")
+
+  let content = null;
+  if (filterOff === true) {
+    content = "";
+  } else if (filterOff === false) {
+    content = <Navigation />
+  }
+
   return (
     <>
     <Hero />
     <MainContent />
-    <Navigation />
+    <Navigation setFilterOff = {setFilterOff}/>
       <Footer />
     </>
   );
