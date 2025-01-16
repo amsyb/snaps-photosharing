@@ -1,7 +1,7 @@
 import "./App.scss";
 import "./main";
 import "./styles/partials/_global.scss";
-import Footer from "./styles/partials/components/Footer/Footer";
+import Footer from "./components1/Footer1/Footer";
 
 function App() {
   return (
