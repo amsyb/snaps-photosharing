@@ -1,12 +1,11 @@
 import "./App.scss";
 import "./main";
-import Footer from "./styles/partials/componts/Footer/Footer";
+import "./styles/partials/_global.scss";
+import Footer from "./styles/partials/components/Footer/Footer";
 
 function App() {
   return (
     <>
-      <h1>Snaps</h1>
-
       <Footer />
     </>
   );
