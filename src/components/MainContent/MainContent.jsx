@@ -9,7 +9,7 @@ function MainContent() {
         .map((photo) => {
           return (
             <li key={photo.id}>
-              <img src={photo.photo} alt={`Photo ${photo.id}`} />
+              <img className="photos__img" src={photo.photo} alt={`Photo ${photo.id}`} />
               <p>{photo.photographer}</p>
               <p>{photo.tags}</p>
             </li>

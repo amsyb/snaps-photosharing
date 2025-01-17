@@ -5,5 +5,24 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     background-color: $tertiary-color;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+
+
+.photos__img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

@@ -1,5 +1,4 @@
 import tags from "../../data/tags.json"
-// console.log(tags)
 
 function Navigation() {
   return (

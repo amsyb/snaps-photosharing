@@ -1,4 +1,6 @@
-@use "../../styles/partials/global";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/global" as *;
 
 ul {
   list-style-type: none;
@@ -25,49 +27,3 @@ ul {
   }
 
   
-  // .icons, .icons1 {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 1em;
-  // }
-  
-  // .extras {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 1em;
-  //   color: darkgrey;
-  // }
-  
-  // .tablet {
-  //   background-color: lightgreen;
-  //   padding: 4em;
-  // }
-  
-  // .tablet-links {
-  //   display: flex;
-  //   gap: 4em;
-  // }
-  
-  // .tablet-copy {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-  
-  // .tablet-extras {
-  //   display: flex;
-  //   color: darkgrey;
-  //   gap: 1em;
-  // }
-  
-  // .desktop {
-  //   background-color: #EDF9F6;
-  //   padding: 1em;
-  // }
-  
-  // .desktop-copy {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-  
-  // .desktop-title {
-  //   width: 40%;}
