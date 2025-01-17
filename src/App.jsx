@@ -10,22 +10,14 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
  
-  const [filterOff, setFilterOff] = useState("")
-
-  let content = null;
-  if (filterOff === true) {
-    content = "";
-  } else if (filterOff === false) {
-    content = <Navigation />
-  }
-
+  const [filtersOpen, setFiltersOpen] = useState(false);
   return (
-    <>
-    <Hero />
-    <MainContent />
-    <Navigation setFilterOff = {setFilterOff}/>
-      <Footer />
-    </>
+      <>
+          <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
+          <Hero />
+          <MainContent filtersOpen={filtersOpen} />
+          <Footer />
+      </>
   );
 }
 

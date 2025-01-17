@@ -1,24 +1,20 @@
-import photos from "../../data/photos.json"
+import { useState } from "react";
+import Filter from "../FIlter/Filter";
+import PhotoList from "../PhotoList/PhotoList";
 import "./MainContent.scss";
 
-function MainContent() {
+function MainContent({ filtersOpen }) {
+  const [activeFilter, setActiveFilter] = useState(null)
   return (
-    <>
-    <section className="photos">
-    <ul className="photos__list">
-      {photos
-        .map((photo) => {
-          return (
-            <li className="photos__block" key={photo.id}>
-              <img className="photos__img" src={photo.photo} alt={`Photo ${photo.id}`} />
-              <p className="photos__photographer">{photo.photographer}</p>
-              <p className="photos__tags">{photo.tags}</p>
-            </li>
-          );
-        })}
-    </ul>
-  </section>
-  </>
+    <div className="main-content">
+            {filtersOpen && (
+                <Filter
+                    activeFilter={activeFilter}
+                    setActiveFilter={setActiveFilter}
+                />
+            )}
+            <PhotoList activeFilter={activeFilter} />
+        </div>
   )
 }
 

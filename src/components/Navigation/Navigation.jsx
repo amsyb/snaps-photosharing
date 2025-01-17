@@ -1,21 +1,17 @@
-import tags from "../../data/tags.json"
 
-function Navigation() {
+function Navigation({ filtersOpen, setFiltersOpen }) {
   return (
-    <>
-     <section className="tags">
-    <h3 className="tags__header">Filters</h3>
-    <ul className="tags__list">
-      {tags.map((tag, index) => {
-          return (
-            <li key={index}>
-              {tag}
-            </li>
-          );
-        })}
-    </ul>
-  </section>
-    </>
+    <header className="header">
+    <span className="header__logo"> Snaps</span>
+    <button
+        className={`toggle-filters-button ${
+            filtersOpen ? "toggle-filters-button--open" : ""
+        }`}
+        onClick={() => setFiltersOpen((prev) => !prev)}
+    >
+        Filters
+    </button>
+</header>
    )
   }
 
