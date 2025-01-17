@@ -1,4 +1,5 @@
 import photos from "../../data/photos.json"
+import "./MainContent.scss";
 
 function MainContent() {
   return (
@@ -8,10 +9,10 @@ function MainContent() {
       {photos
         .map((photo) => {
           return (
-            <li key={photo.id}>
+            <li className="photos__block" key={photo.id}>
               <img className="photos__img" src={photo.photo} alt={`Photo ${photo.id}`} />
-              <p>{photo.photographer}</p>
-              <p>{photo.tags}</p>
+              <p className="photos__photographer">{photo.photographer}</p>
+              <p className="photos__tags">{photo.tags}</p>
             </li>
           );
         })}

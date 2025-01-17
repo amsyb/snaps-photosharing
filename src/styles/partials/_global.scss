@@ -16,13 +16,3 @@
     align-items: center;
     padding: 2em;
 }
-
-.photos__img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 100%;
-    border: 1px $border-color solid;
-}
