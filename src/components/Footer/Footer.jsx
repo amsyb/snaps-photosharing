@@ -1,5 +1,8 @@
 import "./Footer.scss";
-import { FacebookIcon, InstagramIcon, PinterestIcon, TwitterIcon } from "../../components/Icons/Images"
+import facebookIcon from "../../assets/images/Facebook.svg"
+import twitterIcon from "../../assets/images/X_twitter.svg"
+import instagramIcon from "../../assets/images/Instagram.svg"
+import pinterestIcon from "../../assets/images/Pinterest.svg"
 
 function Footer() {
   return (
@@ -22,16 +25,16 @@ function Footer() {
 
         <ul className="footer__icons">
           <li>
-           <FacebookIcon />
+            <img src={facebookIcon} alt="" />
           </li>
           <li>
-            <InstagramIcon />
+          <img src={twitterIcon} alt="" />
           </li>
           <li>
- 
+          <img src={instagramIcon} alt="" />
           </li>
           <li>
-            <PinterestIcon />
+          <img src={pinterestIcon} alt="" />
           </li>
         </ul>
 
