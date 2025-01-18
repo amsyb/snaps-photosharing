@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Filter from "../FIlter/Filter";
+import Filter from "../Filter/Filter";
 import PhotoList from "../PhotoList/PhotoList";
 import "./MainContent.scss";
 

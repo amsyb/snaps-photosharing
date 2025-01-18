@@ -28,7 +28,7 @@ function Footer() {
             <InstagramIcon />
           </li>
           <li>
-            <TwitterIcon />
+ 
           </li>
           <li>
             <PinterestIcon />

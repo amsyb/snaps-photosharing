@@ -2,3 +2,20 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+button {
+    border: 2px solid $secondary-color;
+    padding: 8px 16px;
+    border-radius: 50px;
+
+    :hover {
+        background-color: $secondary-color;
+    }
+}

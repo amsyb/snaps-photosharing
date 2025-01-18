@@ -1,8 +1,9 @@
+import "./Navigation.scss"
 
 function Navigation({ filtersOpen, setFiltersOpen }) {
   return (
-    <header className="header">
-    <span className="header__logo"> Snaps</span>
+    <header className="navigation">
+    <span className="navigation__logo wordmark"> Snaps</span>
     <button
         className={`toggle-filters-button ${
             filtersOpen ? "toggle-filters-button--open" : ""
