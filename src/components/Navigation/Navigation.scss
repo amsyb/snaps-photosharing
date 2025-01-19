@@ -10,16 +10,9 @@
     padding-bottom: 1em;
 }
 
-.navigation__icon {
-    color: $secondary-color;
-    background: none;
-    &:hover {
-        background-color: white;
-    }
-}
-
 .toggle-filters-button {
     display: flex;
+    flex-direction: row-reverse;
     gap: 1em;
     align-items: center;
     padding: 8px 16px;
@@ -27,10 +20,17 @@
     border: 2px solid $secondary-color;
     color: $secondary-color;
     background-color: $tertiary-color;
+
+    &:hover {
+        color: $alt-text;
+        background-color: $secondary-color;
+        .navigation__icon {
+            filter: brightness(0) invert(1); 
+        }
+    }
 }
 
-.toggle-filters-button:hover {
-    color: $alt-text;
-    background-color: $secondary-color;
+.navigation__icon {
+    color: $secondary-color; 
+    background: none;
 }
-

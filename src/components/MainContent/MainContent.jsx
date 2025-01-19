@@ -7,19 +7,20 @@ import "./MainContent.scss";
 function MainContent({ filtersOpen }) {
   const [activeFilter, setActiveFilter] = useState(null)
   return (
-    <section className="all">
-
-    <div className="main-content">
-            {filtersOpen && (
-                <Filter
-                    activeFilter={activeFilter}
-                    setActiveFilter={setActiveFilter}
-                />
-            )}
-             <Hero />
+<section className="all">
+    <div className={`main-content ${filtersOpen ? 'filters-open' : ''}`}>
+        {filtersOpen && (
+            <Filter
+                activeFilter={activeFilter}
+                setActiveFilter={setActiveFilter}
+            />
+        )}
+        <div className="main-test">
+            <Hero />
             <PhotoList activeFilter={activeFilter} />
         </div>
-        </section>
+    </div>
+</section>
   ) 
 }
 
