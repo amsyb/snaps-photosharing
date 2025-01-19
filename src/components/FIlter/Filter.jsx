@@ -15,6 +15,7 @@ export default function Filter({ activeFilter, setActiveFilter }) {
     return (
         <div className="filter-list">
             <h2 className="filter__heading body">Filters</h2>
+            <div className="filter-test">
             {tags.map((tag, index) => {
                 return (
                     <span
@@ -28,6 +29,7 @@ export default function Filter({ activeFilter, setActiveFilter }) {
                     </span>
                 );
             })}
+            </div>
         </div>
     );
 }
