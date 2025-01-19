@@ -33,6 +33,8 @@
     font-style: light;
 }
 
+//newsreader
+
 .wordmark {
     font-family: 'Newsreader Light';
     font-size:  32px;
@@ -47,6 +49,7 @@
     font-weight: 300;
 }
 
+//outfit
 .heading {
     font-family: 'Outfit';
     font-size:  18px;
@@ -55,7 +58,13 @@
 }
 
 .body {
-    font-family: 'Outfit';
+    font-family: 'Outfit Medium';
+    font-size: 16px
+}
+
+.body-light {
+    font-family: 'Outfit Light';
+    font-size: 14px;
 }
 
 .body-footer {
@@ -101,8 +110,15 @@
         line-height: 26px;
         font-weight: 500;
     }
+
+    .body-light {
+        font-size:  20px;
+        line-height: 26px;
+        font-weight: 500;
+    }
     
-    .body-smaill {
+    
+    .body-small {
         font-size:  12px;
         line-height: 15px;
         font-weight: 500;

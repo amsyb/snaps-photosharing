@@ -7,25 +7,61 @@ ul {
   list-style-type: none;
 }
 
+// .footer-all-flex {
+//   display: none;
+
+//   @include desktop {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+// }
+// }
+
 .footer {
-  padding: 2em 0em;
+  display: flex;
+  flex-direction: column;
+  padding-top: $xl;
+  padding-bottom: $m;
   gap: 1em;
 }
+  .footer__title-primary{
+    display: flex;
+    flex-direction: column;
+    gap: $m;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+
+    @include desktop {
+      padding-right: 4em;
+    }
+  }
+
   .footer__primary{
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: $s;
+    padding-bottom: 1em;
   }
 
-  .footer__secondary {
+  .footer__secondary{
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding-bottom: 0.5em;
+    gap: $s;
+    padding-bottom: 1em;
   }
 
   .footer__icons {
     display: flex;
+    align-items: center;
     gap: 1em
   }
 

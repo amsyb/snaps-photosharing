@@ -9,7 +9,11 @@ function Footer() {
     <>
       <section className="footer">
         <ul className="footer__title-primary">
-          <h2 className="wordmark">Snaps</h2>
+          <ul className="footer-all-flex">
+          <ul className="footer-logo">
+          <li className="wordmark">Snaps</li>
+          </ul>
+          <ul className="footer-links">
           <ul className="footer__primary">
             <li className="body-footer">For photographers</li>
             <li className="body-footer">Hire talent</li>
@@ -21,6 +25,7 @@ function Footer() {
             <li className="body-footer">Careers</li>
             <li className="body-footer">Support</li>
           </ul>
+        </ul>
         </ul>
 
         <ul className="footer__icons">
@@ -36,6 +41,7 @@ function Footer() {
           <li>
           <img src={pinterestIcon} alt="" />
           </li>
+        </ul>
         </ul>
 
         <ul className="footer__tertiary">

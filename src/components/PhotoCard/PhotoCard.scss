@@ -3,16 +3,36 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
+
+.photo__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: $m;
+
+    @include tablet {
+        justify-content: space-around;
+    }
+}
+
 .photos {
     display: flex;
     flex-direction: column;
     position: relative;
-}
+    width: 100%;
 
-.photo__list {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
+    @include tablet {
+        flex: 0 0 50%;
+        max-width: 45%;
+    }
+}
+.photo-name {
+    position: relative;
+    width: 100%;
+
+    @include tablet {
+    }
+
 }
 
 .photos__img {
@@ -21,14 +41,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px 10px 0px 0px;
-    width: 100%;
     border: 1px  $border-color solid;
+    width: 100%;
 }
 
-
-.photo-name {
-    position: relative;
-}
 .photos__photographer {
     position: absolute;
     bottom: 0%;
@@ -38,17 +54,23 @@
     padding: 0.5em;
     border-radius: 10px 0px 0px 0px;
     border-right: 1px solid $border-color;
+
+    @include tablet {
+        bottom: 0%;
+    }
 }
 
 .photos__tags {
     display: flex;
-    gap: 1em;
+    flex-wrap: wrap;
+    gap: $s;
     background-color: $alt-bg-color;
     border-radius: 0px 0px 10px 10px;
-    padding: 1em;
+    padding: $s;
     border: 1px solid $border-color;
     border-top: none;
 }
+
 .photos__tag {
     display: flex;
     justify-content: center;
@@ -57,6 +79,10 @@
     background-color: $alt-text;
     padding: 6px 8px;
     border: 1px solid $border-color;
-    border-radius: 6px;
+    border-radius: 12px;
+
+    @include tablet {
+        border-radius: 8px;
+    }
 }
 

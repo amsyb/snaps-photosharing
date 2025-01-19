@@ -20,7 +20,7 @@ export default function Filter({ activeFilter, setActiveFilter }) {
                 return (
                     <span
                         key={index}
-                        className={`filter ${
+                        className={`filter body ${
                             activeFilter === tag ? "filter--active" : ""
                         }`}
                         onClick={() => handleFilterClick(tag)}
