@@ -15,7 +15,7 @@ function MainContent({ filtersOpen }) {
             )}
             <PhotoList activeFilter={activeFilter} />
         </div>
-  )
+  ) 
 }
 
 export default MainContent

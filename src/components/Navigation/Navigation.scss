@@ -10,12 +10,27 @@
     padding-bottom: 1em;
 }
 
-button {
-    border: 2px solid $secondary-color;
-    padding: 8px 16px;
-    border-radius: 50px;
-
-    :hover {
-        background-color: $secondary-color;
+.navigation__icon {
+    color: $secondary-color;
+    background: none;
+    &:hover {
+        background-color: white;
     }
 }
+
+.toggle-filters-button {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 2px solid $secondary-color;
+    color: $secondary-color;
+    background-color: $tertiary-color;
+}
+
+.toggle-filters-button:hover {
+    color: $alt-text;
+    background-color: $secondary-color;
+}
+

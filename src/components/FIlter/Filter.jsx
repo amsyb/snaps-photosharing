@@ -3,13 +3,14 @@ import "../Filter/Filter.scss"
 
 
 export default function Filter({ activeFilter, setActiveFilter }) {
-    const handleFilterClick = (tagsClicked) => {
-        if (tagsClicked === activeFilter) {
+    const handleFilterClick = (tagClicked) => {
+        if (tagClicked === activeFilter) {
             setActiveFilter(null);
         } else {
-            setActiveFilter(tagsClicked);
+            setActiveFilter(tagClicked);
         }
     };
+
 
     return (
         <div className="filter-list">
@@ -30,3 +31,6 @@ export default function Filter({ activeFilter, setActiveFilter }) {
         </div>
     );
 }
+
+
+

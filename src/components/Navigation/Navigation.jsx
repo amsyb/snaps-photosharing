@@ -10,7 +10,7 @@ function Navigation({ filtersOpen, setFiltersOpen }) {
             filtersOpen ? "toggle-filters-button--open" : ""
         }`}
         onClick={() => setFiltersOpen((prev) => !prev)}
-    ><img src={filterIcon} alt="" />
+    ><img src={filterIcon} alt="filter-icon" className="navigation__icon" />
         Filters
     </button>
 </header>
