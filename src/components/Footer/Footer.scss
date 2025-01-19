@@ -7,9 +7,21 @@ ul {
   list-style-type: none;
 }
 
+.footer {
+  padding: 2em 0em;
+  gap: 1em;
+}
   .footer__primary{
     display: flex;
     flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .footer__secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-bottom: 0.5em;
   }
 
   .footer__icons {
@@ -20,6 +32,7 @@ ul {
   .footer__tertiary {
     display: flex;
     gap: 1em;
+    color: $border-color;
   }
 
   

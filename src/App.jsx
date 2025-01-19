@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
-import Hero from "./components/Hero/Hero";
 import MainContent from "./components/MainContent/MainContent";
+import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -12,8 +12,7 @@ function App() {
   return (
       <>
           <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
-          <Hero />
-          <MainContent filtersOpen={filtersOpen} />
+          <MainContent filtersOpen={filtersOpen}/>
           <Footer />
       </>
   );

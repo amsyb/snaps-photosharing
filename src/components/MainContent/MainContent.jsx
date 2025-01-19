@@ -6,6 +6,12 @@ import "./MainContent.scss";
 function MainContent({ filtersOpen }) {
   const [activeFilter, setActiveFilter] = useState(null)
   return (
+    <section className="all">
+    <div className="hero">
+    <p className="body">Our mission:</p>
+    <p className="title">Provide photographers a space to share photos of the neighborhoods they cherish, <i>expressed in thier unique style</i></p>
+    </div>
+
     <div className="main-content">
             {filtersOpen && (
                 <Filter
@@ -15,6 +21,7 @@ function MainContent({ filtersOpen }) {
             )}
             <PhotoList activeFilter={activeFilter} />
         </div>
+        </section>
   ) 
 }
 

@@ -11,15 +11,15 @@ function Footer() {
         <ul className="footer__title-primary">
           <h2 className="wordmark">Snaps</h2>
           <ul className="footer__primary">
-            <li className="body">For photographers</li>
-            <li className="body">Hire talent</li>
-            <li className="body">Inspiration</li>
+            <li className="body-footer">For photographers</li>
+            <li className="body-footer">Hire talent</li>
+            <li className="body-footer">Inspiration</li>
           </ul>
 
           <ul className="footer__secondary">
-            <li className="body">About</li>
-            <li className="body">Careers</li>
-            <li className="body">Support</li>
+            <li className="body-footer">About</li>
+            <li className="body-footer">Careers</li>
+            <li className="body-footer">Support</li>
           </ul>
         </ul>
 
@@ -39,10 +39,10 @@ function Footer() {
         </ul>
 
         <ul className="footer__tertiary">
-          <li className="body-small">2024 Snaps</li>
-          <li className="body-small">Terms</li>
-          <li className="body-small">Privacy</li>
-          <li className="body-small">Cookies</li>
+          <li className="body-footer">2024 Snaps</li>
+          <li className="body-footer">Terms</li>
+          <li className="body-footer">Privacy</li>
+          <li className="body-footer">Cookies</li>
         </ul>
       </section>
     </>
