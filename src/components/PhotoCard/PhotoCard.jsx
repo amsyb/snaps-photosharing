@@ -1,6 +1,6 @@
 import "./PhotoCard.scss";
 
-export default function PhotoCard({ photo }) {
+function PhotoCard({ photo }) {
   return (
     <div className="photos">
       <div className="photos__name">
@@ -21,3 +21,5 @@ export default function PhotoCard({ photo }) {
     </div>
   );
 }
+
+export default PhotoCard
