@@ -2,14 +2,15 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
-.hero {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding-top: $l;
-    padding-bottom: $xl;
 
-    @include tablet {
-        padding: $xxl 0em;
-    }
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: $l;
+  padding-bottom: $xl;
+
+  @include tablet {
+    padding: $xxl 0em;
+  }
 }

@@ -3,49 +3,46 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
-
 .photo__list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: $m;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: $m;
 
-    @include tablet {
-        justify-content: space-around;
-    }
+  @include tablet {
+    justify-content: space-around;
+  }
 }
 
 .photos {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+
+  @include tablet {
+    flex: 0 0 50%;
+    max-width: 45%;
+  }
+
+  &__name {
     position: relative;
     width: 100%;
 
-    @include tablet {
-        flex: 0 0 50%;
-        max-width: 45%;
-    }
-}
-.photo-name {
-    position: relative;
-    width: 100%;
+    @include tablet {}
+  }
 
-    @include tablet {
-    }
-
-}
-
-.photos__img {
+  &__img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px 10px 0px 0px;
-    border: 1px  $border-color solid;
+    border: 1px $border-color solid;
     width: 100%;
-}
+  }
 
-.photos__photographer {
+  &__photographer {
     position: absolute;
     bottom: 0%;
     right: 0%;
@@ -56,11 +53,11 @@
     border-right: 1px solid $border-color;
 
     @include tablet {
-        bottom: 0%;
+      bottom: 0%;
     }
-}
+  }
 
-.photos__tags {
+  &__tags {
     display: flex;
     flex-wrap: wrap;
     gap: $s;
@@ -69,9 +66,9 @@
     padding: $s;
     border: 1px solid $border-color;
     border-top: none;
-}
+  }
 
-.photos__tag {
+  &__tag {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +79,7 @@
     border-radius: 12px;
 
     @include tablet {
-        border-radius: 8px;
+      border-radius: 8px;
     }
+  }
 }
-

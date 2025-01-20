@@ -1,27 +1,27 @@
 import { useState } from "react";
 import Filter from "../Filter/Filter";
 import PhotoList from "../PhotoList/PhotoList";
-import Hero from "../Hero/Hero"
+import Hero from "../Hero/Hero";
 import "./MainContent.scss";
 
 function MainContent({ filtersOpen }) {
-  const [activeFilter, setActiveFilter] = useState(null)
+  const [activeFilter, setActiveFilter] = useState(null);
   return (
-<section className="all">
-    <div className={`main-content ${filtersOpen ? 'filters-open' : ''}`}>
+    <section className="all">
+      <div className={`main-content ${filtersOpen ? "filters-open" : ""}`}>
         {filtersOpen && (
-            <Filter
-                activeFilter={activeFilter}
-                setActiveFilter={setActiveFilter}
-            />
+          <Filter
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+          />
         )}
         <div className="main-test">
-            <Hero />
-            <PhotoList activeFilter={activeFilter} />
+          <Hero />
+          <PhotoList activeFilter={activeFilter} />
         </div>
-    </div>
-</section>
-  ) 
+      </div>
+    </section>
+  );
 }
 
-export default MainContent
+export default MainContent;

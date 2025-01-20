@@ -1,25 +1,5 @@
 @use "../../styles/partials/variables" as *;
 
-.filter-test {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  background-color: $alt-bg-color;
-}
-
-.filter-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1em;
-  background-color: $alt-bg-color;
-  padding: 1em;
-}
-
-.filter__heading {
-  background-color: $alt-bg-color;
-}
-
 .filter {
   display: flex;
   flex-direction: row;
@@ -35,10 +15,29 @@
     color: $alt-text;
     background-color: $secondary-color;
   }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+    background-color: $alt-bg-color;
+    padding: 1em;
+  }
+
+  &__heading {
+    background-color: $alt-bg-color;
+  }
+
+  &__all-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    background-color: $alt-bg-color;
+  }
 }
 
 .filter--active {
   color: $alt-text;
   background-color: $secondary-color;
-
 }

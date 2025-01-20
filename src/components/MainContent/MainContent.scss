@@ -3,12 +3,11 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
-.main-content{
-    display: flex;
-    flex-direction: column;
+.main-content {
+  display: flex;
+  flex-direction: column;
 
-    @include desktop {
-        flex-direction: row-reverse;
-    }
+  @include desktop {
+    flex-direction: row-reverse;
+  }
 }
-

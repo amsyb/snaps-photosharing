@@ -3,72 +3,72 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
-ul {
-  list-style-type: none;
-}
-
-// .footer-all-flex {
-//   display: none;
-
-//   @include desktop {
-//   display: flex;
-//   justify-content: space-between;
-//   width: 100%;
-// }
-// }
-
 .footer {
   display: flex;
   flex-direction: column;
-  padding-top: $xl;
-  padding-bottom: $m;
-  gap: 1em;
-}
-  .footer__title-primary{
+  gap: $m;
+  padding: 2em 0em;
+
+  &__copy {
     display: flex;
     flex-direction: column;
-    gap: $m;
-
-    @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  .footer-links {
-    display: flex;
-    width: 30%;
-    justify-content: space-between;
 
     @include desktop {
-      padding-right: 4em;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
     }
   }
 
-  .footer__primary{
+  &__links {
     display: flex;
     flex-direction: column;
     gap: $s;
-    padding-bottom: 1em;
+    padding: 1em 0em;
+
+    @include tablet {
+      min-width: 30%;
+      justify-content: flex-end;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
   }
 
-  .footer__secondary{
-    display: flex;
-    flex-direction: column;
-    gap: $s;
-    padding-bottom: 1em;
-  }
-
-  .footer__icons {
+  &__icons {
     display: flex;
     align-items: center;
-    gap: 1em
+    gap: $m;
   }
 
-  .footer__tertiary {
+  &__tertiary {
     display: flex;
-    gap: 1em;
+    gap: $m;
     color: $border-color;
   }
+}
 
-  
+.footer-logo {
+  min-width: 60%;
+
+  @include desktop {
+    min-width: 90%;
+  }
+}
+
+.footer__copy-links {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    width: 60%;
+    justify-content: space-around;
+  }
+}

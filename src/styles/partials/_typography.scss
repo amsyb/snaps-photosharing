@@ -1,132 +1,128 @@
 @font-face {
-    font-family: 'Newsreader';
-    src: url(/src/assets/fonts/Newsreader-Regular.woff) ;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Newsreader";
+  src: url(/src/assets/fonts/Newsreader-Regular.woff);
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Newsreader Light';
-    src: url(/src/assets/fonts/Newsreader-Light.woff) ;
-    font-weight: 300;
-    font-style: light;
+  font-family: "Newsreader Light";
+  src: url(/src/assets/fonts/Newsreader-Light.woff);
+  font-weight: 300;
+  font-style: light;
 }
 
 @font-face {
-    font-family: 'Newsreader Italic';
-    src: url(/src/assets/fonts/Newsreader-LightItalic.woff) ;
-    font-weight: 300;
-    font-style: italic;
+  font-family: "Newsreader Italic";
+  src: url(/src/assets/fonts/Newsreader-LightItalic.woff);
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: 'Outfit Medium';
-    src: url(/src/assets/fonts/Outfit-Medium.woff) ;
-    font-weight: 500;
-    font-style: medium;
+  font-family: "Outfit Medium";
+  src: url(/src/assets/fonts/Outfit-Medium.woff);
+  font-weight: 500;
+  font-style: medium;
 }
 
 @font-face {
-    font-family: 'Outfit Light';
-    src: url(/src/assets/fonts/Outfit-Light.woff) ;
-    font-weight: 300;
-    font-style: light;
+  font-family: "Outfit Light";
+  src: url(/src/assets/fonts/Outfit-Light.woff);
+  font-weight: 300;
+  font-style: light;
 }
-
-//newsreader
 
 .wordmark {
-    font-family: 'Newsreader';
-    font-size:  32px;
-    line-height: 32px;
-    font-weight: 300;
+  font-family: "Newsreader";
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 300;
 }
 
 .title {
-    font-family: 'Newsreader Light';
-    font-size:  26px;
-    line-height: 38px;
-    font-weight: 300;
+  font-family: "Newsreader Light";
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 300;
 }
 
-//outfit
 .heading {
-    font-family: 'Outfit';
-    font-size:  18px;
-    line-height: 23px;
-    font-weight: 500;
+  font-family: "Outfit";
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 500;
 }
 
 .body {
-    font-family: 'Outfit Medium';
-    font-size: 16px
+  font-family: "Outfit Medium";
+  font-size: 16px;
 }
 
 .body-light {
-    font-family: 'Outfit Light';
-    font-size: 14px;
+  font-family: "Outfit Light";
+  font-size: 14px;
 }
 
 .body-footer {
-    font-family: 'Outfit Medium';
-    font-size:  14px;
+  font-family: "Outfit Medium";
+  font-size: 14px;
 }
 
 .body-small {
-    font-family: 'Outfit';
-    font-size:  10px;
-    line-height: 12px;
-    font-weight: 500;
+  font-family: "Outfit";
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
 }
 
 .label {
-    font-family: 'Outfit';
-    font-size:  12px;
-    line-height: 15px;
-    font-weight: 500;
+  font-family: "Outfit";
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
-    .wordmark {
-        font-size:  40px;
-        line-height: 40px;
-        font-weight: 400;
-    }
-    
-    .title {
-        font-size:  56px;
-        line-height: 66px;
-        font-weight: 300;
-    }
-    
-    .heading {
-        font-size:  24px;
-        line-height: 30px;
-        font-weight: 500;
-    }
-    
-    .body {
-        font-size:  20px;
-        line-height: 26px;
-        font-weight: 500;
-    }
+  .wordmark {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 400;
+  }
 
-    .body-light {
-        font-size:  20px;
-        line-height: 26px;
-        font-weight: 500;
-    }
-    
-    
-    .body-small {
-        font-size:  12px;
-        line-height: 15px;
-        font-weight: 500;
-    }
-    
-    .label {
-        font-size:  14px;
-        line-height: 17.5px;
-        font-weight: 500;
-    }
+  .title {
+    font-size: 56px;
+    line-height: 66px;
+    font-weight: 300;
+  }
+
+  .heading {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  .body {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+
+  .body-light {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+
+  .body-small {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 17.5px;
+    font-weight: 500;
+  }
 }

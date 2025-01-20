@@ -4,33 +4,33 @@
 @use "../../styles/partials/variables" as *;
 
 .navigation {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1em;
+
+  &__icon {
+    color: $secondary-color;
+    background: none;
+  }
 }
 
 .toggle-filters-button {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1em;
-    align-items: center;
-    padding: 8px 16px;
-    border-radius: 50px;
-    border: 2px solid $secondary-color;
-    color: $secondary-color;
-    background-color: $tertiary-color;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1em;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+  background-color: $tertiary-color;
 
-    &:hover {
-        color: $alt-text;
-        background-color: $secondary-color;
-        .navigation__icon {
-            filter: brightness(0) invert(1); 
-        }
+  &:hover {
+    color: $alt-text;
+    background-color: $secondary-color;
+    .navigation__icon {
+      filter: brightness(0) invert(1);
     }
-}
-
-.navigation__icon {
-    color: $secondary-color; 
-    background: none;
+  }
 }
