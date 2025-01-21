@@ -1,20 +1,23 @@
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import "./App.scss";
-import Navigation from "./components/Navigation/Navigation";
-import MainContent from "./components/MainContent/MainContent";
-import Hero from "./components/Hero/Hero";
-import Footer from "./components/Footer/Footer";
+import Homepage from './pages/Homepage/Homepage';
+// import Navigation from "./components/Navigation/Navigation";
+// import MainContent from "./components/MainContent/MainContent";
+// import Footer from "./components/Footer/Footer";
 
 function App() {
  
-  const [filtersOpen, setFiltersOpen] = useState(false);
+//   const [filtersOpen, setFiltersOpen] = useState(false);
   return (
-      <>
-          <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
+      <BrowserRouter>
+      <Routes>
+        <Route path ="/" element={<Homepage />} />
+          {/* <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
           <MainContent filtersOpen={filtersOpen}/>
-          <Footer />
-      </>
+          <Footer /> */}
+          </Routes>
+      </BrowserRouter>
   );
 }
 
