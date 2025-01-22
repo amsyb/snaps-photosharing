@@ -1,6 +1,6 @@
 import PhotoCard from "../PhotoCard/PhotoCard";
 
-import photos from "../../data/photos.json";
+// import photos from "../../data/photos.json";
 
 function PhotoList({ activeFilter }) {
   let filteredPhotos = photos.filter((photo) => {
