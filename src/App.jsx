@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
 import MainContent from "./components/MainContent/MainContent";
-import Hero from "./components/Hero/Hero";
+import NewPhotoList from './components/NewPhotoList/NewPhotoList';
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <>
           <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
           <MainContent filtersOpen={filtersOpen}/>
+          <NewPhotoList />
           <Footer />
       </>
   );
