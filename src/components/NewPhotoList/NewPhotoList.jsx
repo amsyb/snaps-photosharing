@@ -1,10 +1,21 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import PhotoCard from "../PhotoCard/PhotoCard";
 
 const API_KEY ="6e44d21f-2f0a-42a6-bd89-1adacd11a126";
 
-const NewPhotoList = () => {
-  const [photos, setPhotos] = useState(null);
+const NewPhotoList = ({ activeFilter }) => {
+  const [photos, setPhotos] = useState([]);
+
+  let filteredPhotos = photos.filter((photo) => {
+    if (activeFilter === null) {
+      return true;
+    } else if (photo.tags.includes(activeFilter)) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   const getPhotos = async () => {
     try {
@@ -24,21 +35,13 @@ const NewPhotoList = () => {
   }, []);
 
   return (
-    <section className="photos">
-    {photos &&
-      photos.map((photo) => (
-        <article key={photo.id} className="photo-card__container">
-          <img
-            className="photos__img"
-            src={photo.photo}
-            alt={`Photo ${photo.photoDescription}`}
-          />
-        </article>
-      ))}
-  </section>
+    <div className="photo__list">
+    {filteredPhotos.map((photo) => {
+      return <PhotoCard key={photo.id} photo={photo} />;
+    })}
+  </div>
   );
 };
 
 export default NewPhotoList;
-
 

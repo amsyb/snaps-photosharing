@@ -1,8 +1,8 @@
 import "../Filter/Filter.scss";
 import axios from "axios";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
-const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126"
+const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
 
 function Filter({ activeFilter, setActiveFilter }) {
   const [tags, setTags] = useState([]);
@@ -29,7 +29,6 @@ function Filter({ activeFilter, setActiveFilter }) {
   useEffect(() => {
     getTags();
   }, []);
-
 
   return (
     <div className="filter__list">
