@@ -1,4 +1,4 @@
-import "../Filter/Filter.scss";
+import "./Filter.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 

@@ -1,23 +1,24 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
-
-import "./App.scss";
 import Navigation from "./components/Navigation/Navigation";
-import MainContent from "./components/MainContent/MainContent";
-import NewPhotoList from './components/NewPhotoList/NewPhotoList';
-import Footer from "./components/Footer/Footer";
+import Homepage from './pages/Homepage/homepage';
+import PhotoDetails from "./pages/PhotoDetails/PhotoDetails";
+
 
 function App() {
- 
-  const [filtersOpen, setFiltersOpen] = useState(false);
+    const [filtersOpen, setFiltersOpen] = useState(false);
   return (
-      <>
-          <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
-          <MainContent filtersOpen={filtersOpen}/>
-          <NewPhotoList />
-          <Footer />
-      </>
-  );
+
+<BrowserRouter>
+<Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
+<Routes>
+ <Route path="/" element={<Homepage />} />
+ <Route path ="/photos/:photoId" element = {<PhotoDetails />} />
+</Routes>
+</BrowserRouter>
+  )
 }
 
-export default App;
+export default App
+
 

@@ -7,7 +7,7 @@ export default function PhotoCard({ photo }) {
         <img
           className="photos__img"
           src={photo.photo}
-          alt={`Photo ${photo.id}`}
+          alt={`Photo ${photo.photoDescription}`}
         />
         <p className="photos__photographer body">{photo.photographer}</p>
       </div>

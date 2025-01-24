@@ -22,7 +22,6 @@ const NewPhotoList = ({ activeFilter }) => {
       const response = await axios.get(
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos?api_key=${API_KEY}`
       );
-      console.log("API Response:", response.data)
       setPhotos(response.data);
     } catch (error) {
       console.log("Error fetching photos", error);
