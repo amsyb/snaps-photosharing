@@ -1,4 +1,3 @@
-// import tags from "../../data/tags.json";
 import "../Filter/Filter.scss";
 import axios from "axios";
 import { useState, useEffect} from "react";
