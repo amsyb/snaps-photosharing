@@ -14,7 +14,7 @@ const NewPhotoList = () => {
       console.log("API Response:", response.data)
       setPhotos(response.data);
     } catch (error) {
-      console.log("Error fetching movies", error);
+      console.log("Error fetching photos", error);
     }
   };
  
@@ -40,3 +40,5 @@ const NewPhotoList = () => {
 };
 
 export default NewPhotoList;
+
+
