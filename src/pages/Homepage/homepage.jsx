@@ -1,18 +1,21 @@
 import { useState } from 'react';
+import Navigation from "../../components/Navigation/Navigation";
 import MainContent from "../../components/MainContent/MainContent";
-import NewPhotoList from '../../components/NewPhotoList/NewPhotoList';
 import Footer from "../../components/Footer/Footer";
 
 function Homepage() {
     const [filtersOpen, setFiltersOpen] = useState(false);
-  return (
-    <>
-          <MainContent filtersOpen={filtersOpen} />
-          <NewPhotoList />
-          <Footer />
-          
-          </>
-  )
+    return (
+        <>
+            {/* Pass filtersOpen and setFiltersOpen to Navigation */}
+            <Navigation 
+                // filtersOpen={filtersOpen} 
+                setFiltersOpen={setFiltersOpen} 
+            />
+            <MainContent filtersOpen={filtersOpen} />
+            <Footer />
+        </>
+    );
 }
 
-export default Homepage
+export default Homepage;
