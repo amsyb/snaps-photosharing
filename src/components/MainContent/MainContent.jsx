@@ -2,7 +2,7 @@ import { useState } from "react";
 import Filter from "../Filter/Filter";
 import Hero from "../Hero/Hero";
 import "./MainContent.scss";
-import NewPhotoList from "../NewPhotoList/NewPhotoList";
+import PhotoList from "../PhotoList/PhotoList";
 
 function MainContent({ filtersOpen }) {
   const [activeFilter, setActiveFilter] = useState(null);
@@ -17,7 +17,7 @@ function MainContent({ filtersOpen }) {
         )}
         <div className="main-test">
           <Hero />
-          <NewPhotoList activeFilter={activeFilter} />
+          <PhotoList activeFilter={activeFilter} />
         </div>
       </div>
     </section>
