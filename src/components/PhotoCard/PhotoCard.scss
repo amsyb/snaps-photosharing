@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  gap: $m;
+  gap: $padding-medium;
 
   @include tablet {
     justify-content: space-around;
@@ -60,10 +60,10 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: $s;
+    gap: $padding-small;
     background-color: $alt-bg-color;
     border-radius: 0px 0px 10px 10px;
-    padding: $s;
+    padding: $padding-small;
     border: 1px solid $border-color;
     border-top: none;
   }

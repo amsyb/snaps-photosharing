@@ -7,10 +7,10 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding-top: $l;
-  padding-bottom: $xl;
+  padding-top: $pading-large;
+  padding-bottom: $padding-xlarge;
 
   @include tablet {
-    padding: $xxl 0em;
+    padding: $padding-xxlarge 0em;
   }
 }

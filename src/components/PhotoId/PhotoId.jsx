@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../../pages/PhotoDetails/PhotoDetails.scss";
+import "../PhotoId/PhotoId.scss";
 import likeIcon from "../../assets/images/Like_Outline.svg";
 
 const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
@@ -29,7 +29,6 @@ function PhotoId() {
     <section className="display">
     <h1>Snaps</h1>
   
-    {/* Photo Section */}
     {photo && (
       <section className="photo">
         <img
@@ -46,7 +45,7 @@ function PhotoId() {
         </p>
         <div className="photo__details">
           <div className="photo__like">
-            <img src={likeIcon} alt="like-icon" />
+            <img src={likeIcon} alt="like-icon" className="photo-like"/>
             <p className="body photo__likes">{photo.likes}</p>
           </div>
           <p className="body photo__photographer">{photo.photographer}</p>

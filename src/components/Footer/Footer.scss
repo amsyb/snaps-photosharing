@@ -6,7 +6,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  gap: $m;
+  gap: $padding-medium;
   padding: 2em 0em;
 
   &__copy {
@@ -23,7 +23,7 @@
   &__links {
     display: flex;
     flex-direction: column;
-    gap: $s;
+    gap: $padding-small;
     padding: 1em 0em;
 
     @include tablet {
@@ -39,12 +39,12 @@
   &__icons {
     display: flex;
     align-items: center;
-    gap: $m;
+    gap: $padding-medium;
   }
 
   &__tertiary {
     display: flex;
-    gap: $m;
+    gap: $padding-medium;
     color: $border-color;
   }
 }
