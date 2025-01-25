@@ -39,12 +39,17 @@ function PhotoForm() {
 </section>
 
 <section className="comments__section">
+<h2 className="body">
+    {comments.length === 1 
+      ? "1 Comment" 
+      : `${comments.length} Comments`}
+  </h2>
   <ul className="comments">
     {comments.map((comment) => (
       <li key={comment.id}>
         <ul className="client-info">
-          <li>{comment.name}</li>
-          <li>
+          <li className="body-footer comment-title">{comment.name}</li>
+          <li className="body-footer comment-title">
             {comment.timestamp
               ? new Intl.DateTimeFormat("en-US", {
                   year: "2-digit",
@@ -54,8 +59,7 @@ function PhotoForm() {
               : "Invalid date"}
           </li>
         </ul>
-        <div className="comment-text">{comment.comment}</div>
-        <div className="comment-timestamp"></div>
+        <div className="comment-text body">{comment.comment}</div>
       </li>
     ))}
   </ul>
