@@ -27,8 +27,6 @@ function PhotoId() {
 
   return (
     <section className="display">
-    <h1>Snaps</h1>
-  
     {photo && (
       <section className="photo">
         <img

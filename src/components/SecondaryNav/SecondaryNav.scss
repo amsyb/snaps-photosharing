@@ -1,0 +1,15 @@
+@use "../../styles/partials/variables" as *;
+
+.link {
+    display: flex;
+    gap: 1em;
+}
+
+.link__icon {
+    width: 2em;
+    height: 2em;
+}
+
+.link__title {
+   color: $secondary-color;
+}
