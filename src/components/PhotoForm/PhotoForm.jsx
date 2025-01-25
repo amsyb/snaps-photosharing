@@ -16,6 +16,9 @@ function PhotoForm() {
       const commentsResponse = await axios.get(
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`
       );
+      const sortedComments = commentsResponse.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      setComments(sortedComments);
+
       setComments(commentsResponse.data);
     } catch (error) {
       console.error("Error fetching comments by ID", error);
@@ -44,21 +47,26 @@ function PhotoForm() {
     try {
       const newCommentsResponse = await axios.post(
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
-        newComment // Send the newComment object as is
+        newComment 
       );
       setNewComments(newCommentsResponse.data);
-      getCommentsById(); // You might want to refresh the list after adding the comment
+      getCommentsById(); 
     } catch (error) {
       console.error("An error occurred:", error);
     }
   };
 
+  console.log(getCommentsById)
+
   return (
     <>
       {/* form section */}
 
-      <section>
+      <section className="form__section">
+
         <form onSubmit={handleSubmit}>
+          <div className="form__test">
+            <div className="input-title">
           <label htmlFor="username" className="body">
             Name
           </label>
@@ -69,7 +77,9 @@ function PhotoForm() {
             className="fill"
             required
           />
+          </div>
 
+<div className="input-title">
           <label htmlFor="commentText" className="body">
             Comment
           </label>
@@ -79,17 +89,20 @@ function PhotoForm() {
             className="fill"
             required
           />
-
+          </div>
+</div>
+<div className="test-button">
           <button type="submit" className="body">
             Submit
           </button>
+          </div>
         </form>
       </section>
 
       {/* comment section */}
 
       <section className="comments__section">
-        <h2 className="body">
+        <h2 className="body comment-text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}
         </h2>
         <ul className="comments">

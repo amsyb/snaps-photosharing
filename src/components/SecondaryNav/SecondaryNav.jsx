@@ -6,16 +6,14 @@ import { Link } from 'react-router-dom'
 function SecondaryNav() {
   return (
     <header className="navigation">
+      <Link to ="/" className="link">
       <span className="navigation__logo wordmark"> Snaps</span>
-
-
-    <Link to = "/"> 
-    <div className="link">
+      </Link>
+    <Link to = "/" className="link"> 
 <img src={arrowIcon} alt="back-button" className="link__icon" />
       <h2 className="body link__title"> 
         Home
       </h2>
-      </div>
       </Link>
   </header>
   )

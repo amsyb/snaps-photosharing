@@ -3,13 +3,23 @@
 .link {
     display: flex;
     gap: 1em;
+    text-decoration: none;
+    align-items: center;
+
+    :visited {
+        text-decoration: none;
+    }
 }
 
 .link__icon {
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .link__title {
    color: $secondary-color;
+}
+
+.navigation__logo:visited {
+    text-decoration: none;
 }
