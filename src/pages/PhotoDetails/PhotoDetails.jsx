@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./PhotoDetails.scss";
+import likeIcon from "../../assets/images/Like_Outline.svg";
 
 const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
 function PhotoDetails() {
   const { photoId } = useParams();
-  const [photo, setPhoto] = useState([]);
+  const [photo, setPhoto] = useState({});
   const [comments, setComments] = useState([]);
 
   const getPhotoById = async (id) => {
@@ -37,33 +38,85 @@ function PhotoDetails() {
 
   useEffect(() => {
     getCommentsById();
-  }, [photoId]); 
+  }, [photoId]);
 
   return (
-    <section>
-      {photo && (
-        <article>
-          <img src={photo.photo} alt={photo.photoDescription} />
-          <p className="body">{photo.tags}</p>
-          <div className="details_details">
-            <p className="body">{photo.likes}</p>
-            <p className="body">{photo.photographer}</p>
-            <p className="body">{photo.timestamp}</p>
-            <div>
-              <ul>
-                {comments.map((comment) => (
-                  <li key={comment.id}>
-                    <strong>{comment.name}:</strong> {comment.comment}
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <section className="display">
+    <h1>Snaps</h1>
+  
+    {/* Photo Section */}
+    {photo && (
+      <section className="photo">
+        <img
+          src={photo.photo}
+          alt={photo.photoDescription}
+          className="photo__image"
+        />
+        <p className="photos__tags">
+          {photo.tags?.map((tag, index) => (
+            <span key={index} className="photos__tag body">
+              {tag}
+            </span>
+          ))}
+        </p>
+        <div className="photo__details">
+          <div className="photo__like">
+            <img src={likeIcon} alt="like-icon" />
+            <p className="body photo__likes">{photo.likes}</p>
           </div>
-        </article>
-      )}
+          <p className="body photo__photographer">{photo.photographer}</p>
+          <p className="body photo__timestamp">
+            {photo.timestamp
+              ? new Intl.DateTimeFormat("en-US", {
+                  year: "2-digit",
+                  month: "2-digit",
+                  day: "2-digit",
+                }).format(new Date(photo.timestamp))
+              : "Invalid date"}
+          </p>
+        </div>
+      </section>
+    )}
+  
+    {/* Form Section */}
+    <section className="form__section">
+      <form action="">
+        <label htmlFor="fname" className="body">Name</label>
+        <input type="text" className="fill" required/>
+        <label htmlFor="fname" className="body">Comment</label>
+        <textarea type="text" className="fill" required/>
+      </form>
+      <button className="body">Submit</button>
     </section>
+  
+    {/* Comments Section */}
+    <section className="comments__section">
+    <ul className="comments">
+  {comments.map((comment) => (
+    <li key={comment.id}>
+      <ul className="client-info">
+        <li>{comment.name}</li>
+        <li>{photo.timestamp
+              ? new Intl.DateTimeFormat("en-US", {
+                  year: "2-digit",
+                  month: "2-digit",
+                  day: "2-digit",
+                }).format(new Date(photo.timestamp))
+              : "Invalid date"}
+              </li>
+      </ul>
+      <div className="comment-text">
+        {comment.comment}
+      </div>
+      <div className="comment-timestamp">
+
+      </div>
+    </li>
+  ))}
+</ul>
+    </section>
+  </section>
   );
 }
 
 export default PhotoDetails;
-
