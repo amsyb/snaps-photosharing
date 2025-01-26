@@ -26,8 +26,9 @@ ul {
 button {
   color: $alt-text;
   background-color: $secondary-color;
-  border-radius: 4px;
-  padding: 4px 8px;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  border: none;
 }
 
 
@@ -59,7 +60,7 @@ textarea {
   @include tablet {
     padding: 1em 0.5em;
   }
-  
+
   &:focus {
     border-color: $secondary-color;
     outline: none;
