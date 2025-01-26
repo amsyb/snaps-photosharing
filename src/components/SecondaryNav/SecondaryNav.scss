@@ -1,5 +1,13 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
+.navigation {
+  padding-bottom: 3em;
+
+  @include desktop {
+    padding-bottom: 4em;
+  }
+}
 .link {
   display: flex;
   gap: 1em;

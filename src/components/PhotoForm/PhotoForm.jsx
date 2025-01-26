@@ -99,7 +99,7 @@ function PhotoForm() {
 
       {/* comment section */}
 
-      <section className="comments">
+      <section className="comment">
         <h2 className="body comment__text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}
         </h2>

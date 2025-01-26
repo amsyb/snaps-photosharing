@@ -21,6 +21,7 @@
     flex-direction: column;
     width: 100%;
     gap: 1em;
+    padding-bottom: 2em;
 }
 
 .form__title {
@@ -47,21 +48,21 @@
     padding: 1em 0;
 }
 
-.comments {
+.comment {
     padding: 0;
+    padding-bottom: 4em;
 
     @include tablet {
     padding: 0em 10em;
 }
-}
-
-.comment__text {
+&__text {
     padding-bottom: 1em;
     border-bottom: 1px solid $border-color;
 }
 
-.comment__title {
+&__title {
     color: $secondary-color
+}
 }
 
 
