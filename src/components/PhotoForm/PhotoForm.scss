@@ -1,6 +1,4 @@
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
 .form {
@@ -26,7 +24,7 @@
   &__title {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: $padding-small;
     padding-bottom: 1em;
   }
 
@@ -34,7 +32,7 @@
     border-radius: 4px;
     background-color: $alt-text;
     border: 1px solid $border-color;
-    height: 30px;
+    height: 2em;
   }
 
   &__button {
@@ -67,5 +65,5 @@
 }
 
 .form__input--comment {
-  height: 80px;
+  height: 5em;
 }
