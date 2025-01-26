@@ -57,16 +57,14 @@ function PhotoForm() {
     }
   };
 
-  console.log(getCommentsById);
-
   return (
     <>
       {/* form section */}
 
-      <section className="form__section">
-        <form onSubmit={handleSubmit}>
-          <div className="form__test">
-            <div className="input-title">
+      <section className="form">
+        <form onSubmit={handleSubmit} className="form__section">
+          <div>
+            <div className="form__title">
               <label htmlFor="username" className="body">
                 Name
               </label>
@@ -74,24 +72,24 @@ function PhotoForm() {
                 id="username"
                 name="username"
                 type="text"
-                className="fill"
+                className="form__input"
                 required
               />
             </div>
 
-            <div className="input-title">
+            <div className="form__title">
               <label htmlFor="commentText" className="body">
                 Comment
               </label>
               <textarea
                 id="commentText"
                 name="commentText"
-                className="fill fill-large"
+                className="form__input form__input--comment"
                 required
               />
             </div>
           </div>
-          <div className="test-button">
+          <div className="form__button">
             <button type="submit" className="body">
               Submit
             </button>
@@ -101,16 +99,16 @@ function PhotoForm() {
 
       {/* comment section */}
 
-      <section className="comments__section">
-        <h2 className="body comment-text">
+      <section className="comments">
+        <h2 className="body comment__text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}
         </h2>
-        <ul className="comments">
+        <ul>
           {comments.map((comment) => (
             <li key={comment.id}>
               <ul className="client-info">
-                <li className="body-footer comment-title">{comment.name}</li>
-                <li className="body-footer comment-title">
+                <li className="body-footer comment__title">{comment.name}</li>
+                <li className="body-footer comment__title">
                   {comment.timestamp
                     ? new Intl.DateTimeFormat("en-US", {
                         year: "2-digit",

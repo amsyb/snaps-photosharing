@@ -3,33 +3,7 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
-.comments__section {
-    padding: 0;
-
-    @include tablet {
-    padding: 0em 10em;
-}
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1em;
-}
-
-.input-title {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.test-button {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.form__section {
+.form {
     padding: none;
 
     @include tablet {
@@ -42,24 +16,29 @@ form {
     gap: 1em;
 }
 
-.form__test {
+.form__section {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 1em;
 }
 
+.form__title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-.fill {
+.form__input {
     border-radius: 4px;
     background-color: $alt-text;
     border: 1px solid $border-color;
     height: 30px;
 }
 
-button {
-    color: $alt-text;
-    background-color: $secondary-color;
-    border-radius: 4px;
-    padding: 4px 8px;
+.form__button {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .client-info {
@@ -68,60 +47,24 @@ button {
     padding: 1em 0;
 }
 
+.comments {
+    padding: 0;
 
-.comments__section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    @include tablet {
+    padding: 0em 10em;
+}
 }
 
-.comment-text {
+.comment__text {
     padding-bottom: 1em;
     border-bottom: 1px solid $border-color;
 }
 
-.comment-title {
+.comment__title {
     color: $secondary-color
 }
 
-textarea {
-    resize: none;
-    font-family: 'Outfit';
 
-    ::placeholder {
-        font-family: 'Outfit';
-    }
-}
-
-.fill-large {
+.form__input--comment {
     height: 80px;
 }
-
-// input[type="text"] {
-//     // Add your styles here
-//     font-family: 'Outfit';
-//     border: 2px solid black;
-  
-//     &:default {
-//       border-color: $secondary-color;
-//       outline: none;
-//       box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-//     }
-  
-//     &:invalid {
-//       border-color: $error-red;
-//     }
-  
-//     &::placeholder {
-//       color: #aaa;
-//       font-style: italic;
-//     }
-//   }
-
-//   input:invalid{
-//     border: 1px solid $error-red;
-//   }
-
-//   input:active{
-//     border: 1px solid $secondary-color;
-//   }
