@@ -4,7 +4,11 @@
 @use "../../styles/partials/variables" as *;
 
 .comments__section {
+    padding: 0;
+
+    @include tablet {
     padding: 0em 10em;
+}
 }
 
 form {
@@ -26,11 +30,16 @@ form {
 }
 
 .form__section {
+    padding: none;
+
+    @include tablet {
+    padding: 2em 10em;
+    }
+    
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 1em;
-    padding: 2em 10em;
 }
 
 .form__test {

@@ -3,23 +3,31 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 
-.display {
-    padding: 0em 10em;
-}
-
 .photo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-&__image {
+  padding: none;
+
+  @include desktop {
+    padding: 0em 10em;
+  }
+  &__image {
     width: 100%;
     justify-content: center;
     align-items: center;
     border-radius: 16px 16px 0px 0px;
-}
-}
+  }
 
-.photos__tags-new {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__like {
+    display: flex;
+    gap: 1em;
+    background-color: $alt-bg-color;
+  }
+  &__tag {
     display: flex;
     flex-wrap: wrap;
     gap: $padding-small;
@@ -29,9 +37,9 @@
     width: 100%;
     border-left: 1px solid $border-color;
     border-right: 1px solid $border-color;
+  }
 
-}
-.photo__details {
+  &__details {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -40,31 +48,28 @@
     border: 1px solid $border-color;
     border-top: none;
     border-radius: 0px 0px 16px 16px;
+
+    &--mobile {
+      display: flex;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
 }
 
-.mobile {
-    display: none;
-}
-
-.photo__like {
-    display: flex;
-    gap: 1em;
-    background-color: $alt-bg-color;
-}
-
-.photo__likes {
-    background-color: $alt-bg-color;
-}
-
-.photo-like {
-    background-color: $alt-bg-color;
-}
-
-.photo__photographer  {
-    background-color: $alt-bg-color;
-}
-
+.photo__likes,
+.photo__icon,
+.photo__photographer,
 .photo__timestamp {
-    background-color: $alt-bg-color;
+  background-color: $alt-bg-color;
 }
-

@@ -26,24 +26,24 @@ function PhotoId() {
       }, [photoId]);
 
   return (
-    <section className="display">
+    <section className="photo">
     {photo && (
-      <section className="photo">
+      <section className="photo__card">
         <img
           src={photo.photo}
           alt={photo.photoDescription}
           className="photo__image"
         />
-        <p className="photos__tags-new">
+        <p className="photo__tag">
           {photo.tags?.map((tag, index) => (
             <span key={index} className="photos__tag body">
               {tag}
             </span>
           ))}
         </p>
-        <div className="photo__details tablet">
+        <div className="photo__details photo__details--tablet">
           <div className="photo__like">
-            <img src={likeIcon} alt="like-icon" className="photo-like"/>
+            <img src={likeIcon} alt="like-icon" className="photo__icon"/>
             <p className="body photo__likes">{photo.likes}</p>
           </div>
           <p className="body photo__photographer">{photo.photographer}</p>
@@ -59,7 +59,7 @@ function PhotoId() {
         </div>
 
 
-        <div className="photo__details mobile">
+        <div className="photo__details photo__details--mobile">
           <div className="photo__details-new">
           <div className="photo__like">
             <img src={likeIcon} alt="like-icon" className="photo-like"/>
