@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from './pages/Homepage/Homepage';
 import PhotoDetails from "./pages/PhotoDetails/PhotoDetails";
@@ -13,6 +14,22 @@ function App() {
 </Routes>
 </BrowserRouter>
   )
+=======
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import "./App.scss";
+import Homepage from './pages/Homepage/Homepage';
+
+function App() {
+ 
+  return (
+      <BrowserRouter>
+      <Routes>
+        <Route path ="/" element={<Homepage />} />
+          </Routes>
+      </BrowserRouter>
+  );
+>>>>>>> main
 }
 
 export default App
