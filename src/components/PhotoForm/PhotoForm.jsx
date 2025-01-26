@@ -16,7 +16,9 @@ function PhotoForm() {
       const commentsResponse = await axios.get(
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`
       );
-      const sortedComments = commentsResponse.data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      const sortedComments = commentsResponse.data.sort(
+        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+      );
       setComments(sortedComments);
 
       setComments(commentsResponse.data);
@@ -27,7 +29,6 @@ function PhotoForm() {
   useEffect(() => {
     getCommentsById();
   }, [photoId]);
-  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,59 +43,58 @@ function PhotoForm() {
 
     addComment(newComment);
   };
-  
+
   const addComment = async (newComment) => {
     try {
       const newCommentsResponse = await axios.post(
         `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
-        newComment 
+        newComment
       );
       setNewComments(newCommentsResponse.data);
-      getCommentsById(); 
+      getCommentsById();
     } catch (error) {
       console.error("An error occurred:", error);
     }
   };
 
-  console.log(getCommentsById)
+  console.log(getCommentsById);
 
   return (
     <>
       {/* form section */}
 
       <section className="form__section">
-
         <form onSubmit={handleSubmit}>
           <div className="form__test">
             <div className="input-title">
-          <label htmlFor="username" className="body">
-            Name
-          </label>
-          <input
-            id="username"
-            name="username"
-            type="text"
-            className="fill"
-            required
-          />
-          </div>
+              <label htmlFor="username" className="body">
+                Name
+              </label>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                className="fill"
+                required
+              />
+            </div>
 
-<div className="input-title">
-          <label htmlFor="commentText" className="body">
-            Comment
-          </label>
-          <textarea
-            id="commentText"
-            name="commentText"
-            className="fill"
-            required
-          />
+            <div className="input-title">
+              <label htmlFor="commentText" className="body">
+                Comment
+              </label>
+              <textarea
+                id="commentText"
+                name="commentText"
+                className="fill fill-large"
+                required
+              />
+            </div>
           </div>
-</div>
-<div className="test-button">
-          <button type="submit" className="body">
-            Submit
-          </button>
+          <div className="test-button">
+            <button type="submit" className="body">
+              Submit
+            </button>
           </div>
         </form>
       </section>

@@ -77,4 +77,12 @@ button {
 
 textarea {
     resize: none;
+
+    ::placeholder {
+        font-family: 'Outfit';
+    }
+}
+
+.fill-large {
+    height: 80px;
 }

@@ -41,7 +41,7 @@ function PhotoId() {
             </span>
           ))}
         </p>
-        <div className="photo__details">
+        <div className="photo__details tablet">
           <div className="photo__like">
             <img src={likeIcon} alt="like-icon" className="photo-like"/>
             <p className="body photo__likes">{photo.likes}</p>
@@ -56,6 +56,29 @@ function PhotoId() {
                 }).format(new Date(photo.timestamp))
               : "Invalid date"}
           </p>
+        </div>
+
+
+        <div className="photo__details mobile">
+          <div className="photo__details-new">
+          <div className="photo__like">
+            <img src={likeIcon} alt="like-icon" className="photo-like"/>
+            <p className="body photo__likes">{photo.likes}</p>
+          </div>
+
+{/* this needs to be hidden on mobile */}
+          <p className="body photo__timestamp">
+            {photo.timestamp
+              ? new Intl.DateTimeFormat("en-US", {
+                  year: "2-digit",
+                  month: "2-digit",
+                  day: "2-digit",
+                }).format(new Date(photo.timestamp))
+              : "Invalid date"}
+          </p>
+          </div>
+
+          <p className="body photo__photographer">{photo.photographer}</p>
         </div>
       </section>
     )}
