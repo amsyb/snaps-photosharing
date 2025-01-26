@@ -1,26 +1,21 @@
 @use "../../styles/partials/variables" as *;
 
 .link {
-    display: flex;
-    gap: 1em;
+  display: flex;
+  gap: 1em;
+  text-decoration: none;
+  align-items: center;
+  color: inherit;
+
+  &:visited {
     text-decoration: none;
-    align-items: center;
-    color: inherit;
-
-    &:visited {
-        text-decoration: none;
-    }
-}
-
-.link__icon {
+  }
+  &__icon {
     width: 1.5em;
     height: 1.5em;
-}
+  }
 
-.link__title {
-   color: $secondary-color;
-}
-
-.navigation__logo:visited {
-    text-decoration: none;
+  &__title {
+    color: $secondary-color;
+  }
 }
