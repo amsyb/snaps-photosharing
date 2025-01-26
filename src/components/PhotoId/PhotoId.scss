@@ -23,11 +23,12 @@
     align-items: center;
     padding-bottom: 2em;
   }
-  
+
   &__like {
     display: flex;
-    gap: 1em;
+    gap: 0.5em;
     background-color: $alt-bg-color;
+    padding-bottom: 1em;
   }
   &__tag {
     display: flex;
