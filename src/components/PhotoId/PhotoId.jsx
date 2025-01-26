@@ -34,7 +34,7 @@ function PhotoId() {
           alt={photo.photoDescription}
           className="photo__image"
         />
-        <p className="photos__tags">
+        <p className="photos__tags-new">
           {photo.tags?.map((tag, index) => (
             <span key={index} className="photos__tag body">
               {tag}

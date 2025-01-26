@@ -3,6 +3,7 @@ import facebookIcon from "../../assets/images/Facebook.svg";
 import twitterIcon from "../../assets/images/X_twitter.svg";
 import instagramIcon from "../../assets/images/Instagram.svg";
 import pinterestIcon from "../../assets/images/Pinterest.svg";
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
         <ul className="footer__copy">
           <ul className="footer__copy-links">
             <ul className="footer-logo">
-              <li className="wordmark">Snaps</li>
+             <Link to ="/" className="link"> <li className="wordmark">Snaps</li> </Link>
             </ul>
             <ul className="footer__links">
               <li className="body-footer">For photographers</li>

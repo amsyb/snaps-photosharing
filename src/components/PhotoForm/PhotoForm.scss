@@ -77,6 +77,7 @@ button {
 
 textarea {
     resize: none;
+    font-family: 'Outfit';
 
     ::placeholder {
         font-family: 'Outfit';
@@ -86,3 +87,32 @@ textarea {
 .fill-large {
     height: 80px;
 }
+
+// input[type="text"] {
+//     // Add your styles here
+//     font-family: 'Outfit';
+//     border: 2px solid black;
+  
+//     &:default {
+//       border-color: $secondary-color;
+//       outline: none;
+//       box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+//     }
+  
+//     &:invalid {
+//       border-color: $error-red;
+//     }
+  
+//     &::placeholder {
+//       color: #aaa;
+//       font-style: italic;
+//     }
+//   }
+
+//   input:invalid{
+//     border: 1px solid $error-red;
+//   }
+
+//   input:active{
+//     border: 1px solid $secondary-color;
+//   }

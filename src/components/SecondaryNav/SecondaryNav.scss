@@ -5,8 +5,9 @@
     gap: 1em;
     text-decoration: none;
     align-items: center;
+    color: inherit;
 
-    :visited {
+    &:visited {
         text-decoration: none;
     }
 }
