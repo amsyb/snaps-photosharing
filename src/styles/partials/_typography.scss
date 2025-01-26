@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @font-face {
   font-family: "Newsreader";
   src: url(/src/assets/fonts/Newsreader-Regular.woff);
@@ -38,6 +40,7 @@
   font-size: 32px;
   line-height: 32px;
   font-weight: 300;
+  color: $primary-color;
 }
 
 .title {
@@ -45,6 +48,7 @@
   font-size: 26px;
   line-height: 38px;
   font-weight: 300;
+  color: $primary-color;
 }
 
 .heading {
@@ -52,33 +56,45 @@
   font-size: 18px;
   line-height: 23px;
   font-weight: 500;
+  color: $primary-color;
+}
+
+.body-medium {
+  font-family: "Outfit Medium";
+  font-size: 16px;
+  color: $primary-color;
 }
 
 .body {
-  font-family: "Outfit Medium";
-  font-size: 16px;
-}
-
-.body-test {
   font-family: "Outfit Light";
   font-size: 14px;
+  color: $primary-color;
 }
 
 .body-light {
   font-family: "Outfit Light";
   font-size: 14px;
+  color: $primary-color;
 }
 
 .body-footer {
   font-family: "Outfit Medium";
   font-size: 14px;
+  color: $primary-color;
 }
 
 .body-small {
-  font-family: "Outfit Light";
+  font-family: "Outfit Medium";
   font-size: 10px;
   line-height: 12px;
   font-weight: 500;
+  color: $primary-color;
+}
+
+.body-button {
+  font-family: "Outfit Light";
+  font-size: 14px;
+  color: $alt-text;
 }
 
 .label {
@@ -86,6 +102,7 @@
   font-size: 12px;
   line-height: 15px;
   font-weight: 500;
+  color: $primary-color;
 }
 
 @media (min-width: 768px) {

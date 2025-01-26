@@ -4,68 +4,68 @@
 @use "../../styles/partials/variables" as *;
 
 .form {
-    padding: none;
+  padding: none;
 
-    @include tablet {
+  @include tablet {
     padding: 2em 10em;
-    }
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1em;
-}
+  }
 
-.form__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1em;
+
+  &__section {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 1em;
     padding-bottom: 2em;
-}
+  }
 
-.form__title {
+  &__title {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
+    padding-bottom: 1em;
+  }
 
-.form__input {
+  &__input {
     border-radius: 4px;
     background-color: $alt-text;
     border: 1px solid $border-color;
     height: 30px;
-}
+  }
 
-.form__button {
+  &__button {
     display: flex;
     justify-content: flex-end;
-}
-
-.client-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 0;
+  }
 }
 
 .comment {
-    padding: 0;
-    padding-bottom: 4em;
+  padding: 0;
+  padding-bottom: 4em;
 
-    @include tablet {
+  @include tablet {
     padding: 0em 10em;
-}
-&__text {
+  }
+  &__text {
     padding-bottom: 1em;
     border-bottom: 1px solid $border-color;
-}
+  }
 
-&__title {
-    color: $secondary-color
-}
-}
+  &__title {
+    color: $secondary-color;
+  }
 
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+  }
+}
 
 .form__input--comment {
-    height: 80px;
+  height: 80px;
 }

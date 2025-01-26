@@ -30,37 +30,42 @@ button {
   padding: 4px 8px;
 }
 
-textarea {
-  resize: none;
-  font-family: 'Outfit';
 
-  ::placeholder {
-      font-family: 'Outfit';
+input[type="text"] {
+  font-family: 'Outfit Light';
+  border: 1px solid $border-color;
+  padding: 0.5em;
+
+  @include tablet {
+    padding: 1em 0.5em;
+  }
+
+  &:focus {
+    border-color: $secondary-color;
+    outline: none;
+  }
+
+  &:focus-within:invalid {
+    border-color: $error-red;
   }
 }
 
-input[type="text"] {
-    font-family: 'Outfit';
-    border: 1px solid $border-color;
+textarea {
+  font-family: 'Outfit Light';
+  border: 1px solid $border-color;
+  resize: none;
+  padding: 0.5em;
+
+  @include tablet {
+    padding: 1em 0.5em;
+  }
   
-    &:default {
-      border-color: $secondary-color;
-    }
-  
-    &:invalid {
-      border-color: $error-red;
-    }
+  &:focus {
+    border-color: $secondary-color;
+    outline: none;
   }
 
-  textarea[type="text"] {
-    font-family: 'Outfit';
-    border: 1px solid $border-color;
-  
-    &:default {
-      border-color: $secondary-color;
-    }
-  
-    &:invalid {
-      border-color: $error-red;
-    }
+  &:focus-within:invalid {
+    border-color: $error-red;
   }
+}

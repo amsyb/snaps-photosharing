@@ -43,7 +43,7 @@ function PhotoId() {
           <div className="photo__details photo__details--tablet">
             <div className="photo__like">
               <img src={likeIcon} alt="like-icon" className="photo__icon" />
-              <p className="body photo__likes">{photo.likes}</p>
+              <p className="body photo__likes">{photo.likes} likes</p>
             </div>
             <p className="body photo__photographer">{photo.photographer}</p>
             <p className="body photo__timestamp">
@@ -58,7 +58,7 @@ function PhotoId() {
           </div>
 
           <div className="photo__details photo__details--mobile">
-            <div className="photo__details-new">
+            <div>
               <div className="photo__like">
                 <img src={likeIcon} alt="like-icon" className="photo__icon" />
                 <p className="body photo__likes">{photo.likes}</p>

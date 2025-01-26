@@ -65,7 +65,7 @@ function PhotoForm() {
         <form onSubmit={handleSubmit} className="form__section">
           <div>
             <div className="form__title">
-              <label htmlFor="username" className="body-test">
+              <label htmlFor="username" className="body">
                 Name
               </label>
               <input
@@ -78,19 +78,20 @@ function PhotoForm() {
             </div>
 
             <div className="form__title">
-              <label htmlFor="commentText" className="body-test">
+              <label htmlFor="commentText" className="body">
                 Comment
               </label>
               <textarea
                 id="commentText"
                 name="commentText"
+                 type="text"
                 className="form__input form__input--comment"
                 required
               />
             </div>
           </div>
           <div className="form__button">
-            <button type="submit" className="body">
+            <button type="submit" className="body-button">
               Submit
             </button>
           </div>
@@ -100,15 +101,15 @@ function PhotoForm() {
       {/* comment section */}
 
       <section className="comment">
-        <h2 className="body-test comment__text">
+        <h2 className="body comment__text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}
         </h2>
         <ul>
           {comments.map((comment) => (
             <li key={comment.id}>
-              <ul className="client-info">
-                <li className="body-test comment__title">{comment.name}</li>
-                <li className="body-test comment__title">
+              <ul className="comment__user">
+                <li className="body-small comment__title">{comment.name}</li>
+                <li className="body-small comment__title">
                   {comment.timestamp
                     ? new Intl.DateTimeFormat("en-US", {
                         year: "2-digit",
@@ -118,7 +119,7 @@ function PhotoForm() {
                     : "Invalid date"}
                 </li>
               </ul>
-              <div className="body-test comment__text">{comment.comment}</div>
+              <div className="body comment__text">{comment.comment}</div>
             </li>
           ))}
         </ul>
