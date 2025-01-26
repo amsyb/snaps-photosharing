@@ -65,7 +65,7 @@ function PhotoForm() {
         <form onSubmit={handleSubmit} className="form__section">
           <div>
             <div className="form__title">
-              <label htmlFor="username" className="body">
+              <label htmlFor="username" className="body-test">
                 Name
               </label>
               <input
@@ -78,7 +78,7 @@ function PhotoForm() {
             </div>
 
             <div className="form__title">
-              <label htmlFor="commentText" className="body">
+              <label htmlFor="commentText" className="body-test">
                 Comment
               </label>
               <textarea
@@ -100,15 +100,15 @@ function PhotoForm() {
       {/* comment section */}
 
       <section className="comment">
-        <h2 className="body comment__text">
+        <h2 className="body-test comment__text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}
         </h2>
         <ul>
           {comments.map((comment) => (
             <li key={comment.id}>
               <ul className="client-info">
-                <li className="body-footer comment__title">{comment.name}</li>
-                <li className="body-footer comment__title">
+                <li className="body-test comment__title">{comment.name}</li>
+                <li className="body-test comment__title">
                   {comment.timestamp
                     ? new Intl.DateTimeFormat("en-US", {
                         year: "2-digit",
@@ -118,7 +118,7 @@ function PhotoForm() {
                     : "Invalid date"}
                 </li>
               </ul>
-              <div className="comment-text body">{comment.comment}</div>
+              <div className="body-test comment__text">{comment.comment}</div>
             </li>
           ))}
         </ul>
