@@ -59,7 +59,6 @@ function PhotoForm() {
 
   return (
     <>
-      {/* form section */}
 
       <section className="form">
         <form onSubmit={handleSubmit} className="form__section">
@@ -84,7 +83,7 @@ function PhotoForm() {
               <textarea
                 id="commentText"
                 name="commentText"
-                 type="text"
+                type="text"
                 className="form__input form__input--comment"
                 required
               />
@@ -97,8 +96,6 @@ function PhotoForm() {
           </div>
         </form>
       </section>
-
-      {/* comment section */}
 
       <section className="comment">
         <h2 className="body comment__text">
