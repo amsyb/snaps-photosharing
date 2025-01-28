@@ -7,15 +7,17 @@ import PhotoList from "../PhotoList/PhotoList";
 function MainContent({ filtersOpen }) {
   const [activeFilter, setActiveFilter] = useState(null);
   return (
-    <section className="all">
-      <div className={`main-content ${filtersOpen ? "filters-open" : ""}`}>
+    <section className="main">
+      <div className={`main__content ${filtersOpen ? "filters-open" : ""}`}>
         {filtersOpen && (
-          <Filter
-            activeFilter={activeFilter}
-            setActiveFilter={setActiveFilter}
-          />
+          <div className="main__filter">
+            <Filter
+              activeFilter={activeFilter}
+              setActiveFilter={setActiveFilter}
+            />
+          </div>
         )}
-        <div className="main-test">
+        <div className="main__hero-list">
           <Hero />
           <PhotoList activeFilter={activeFilter} />
         </div>
