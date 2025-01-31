@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import Navigation from "../../components/Navigation/Navigation";
 import MainContent from "../../components/MainContent/MainContent";
-import Footer from "../../components/Footer/Footer";
 
 function Homepage() {
  
@@ -11,7 +10,6 @@ function Homepage() {
      <>
           <Navigation filtersOpen={filtersOpen} setFiltersOpen={setFiltersOpen} />
           <MainContent filtersOpen={filtersOpen}/>
-          <Footer />
           </>
   );
 }

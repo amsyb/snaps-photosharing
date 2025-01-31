@@ -1,7 +1,6 @@
 import SecondaryNav from "../../components/SecondaryNav/SecondaryNav"
 import PhotoId from "../../components/PhotoId/PhotoId"
 import PhotoForm from "../../components/PhotoForm/PhotoForm"
-import Footer from "../../components/Footer/Footer"
 
 function PhotoDetails() {
   return (
@@ -9,9 +8,7 @@ function PhotoDetails() {
     <SecondaryNav />
       <PhotoId />
       <PhotoForm />
-      <Footer />
       </>
-      
   )
 }
 
