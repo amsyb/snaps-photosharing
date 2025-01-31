@@ -1,13 +1,15 @@
 import SecondaryNav from "../../components/SecondaryNav/SecondaryNav"
 import PhotoId from "../../components/PhotoId/PhotoId"
-import PhotoForm from "../../components/PhotoForm/PhotoForm"
+import PhotoDetails1 from "../../components/PhotoDetails1/PhotoDetails1"
+import PhotoComments from "../../components/PhotoComments/PhotoComments"
 
 function PhotoDetails() {
   return (
     <>
     <SecondaryNav />
       <PhotoId />
-      <PhotoForm />
+      <PhotoComments />
+      <PhotoDetails1 />
       </>
   )
 }
