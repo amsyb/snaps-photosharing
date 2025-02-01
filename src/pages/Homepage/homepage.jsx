@@ -11,7 +11,7 @@ function Homepage() {
   const getTags = async () => {
     try {
       const tagsResponse = await axios.get (
-        'http://localhost:8888/api/tags/endpoint1'
+        'http://localhost:8888/api/tags'
       );
       setTags(tagsResponse.data);
     } catch (error) {

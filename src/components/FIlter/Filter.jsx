@@ -16,7 +16,7 @@ function Filter({ activeFilter, setActiveFilter }) {
   const getTags = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/tags/endpoint1`
+        `http://localhost:8888/api/tags`
       );
       setTags(response.data);
     } catch (error) {
