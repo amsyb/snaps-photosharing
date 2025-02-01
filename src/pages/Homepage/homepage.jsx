@@ -11,7 +11,7 @@ function Homepage() {
   const getTags = async () => {
     try {
       const tagsResponse = await axios.get (
-        `http://localhost:8888/api/tags`
+        'http://localhost:8888/api/tags/endpoint1'
       );
       setTags(tagsResponse.data);
     } catch (error) {
@@ -20,7 +20,8 @@ function Homepage() {
     }
 
   useEffect(() => {
-    getTags(tag)
+  // console.log("Fetched tags:", tag);
+    getTags()
       })
  
   const [filtersOpen, setFiltersOpen] = useState(false);
