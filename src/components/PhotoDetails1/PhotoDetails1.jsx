@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../PhotoForm/PhotoForm.scss";
+import "../PhotoDetails1/PhotoDetails1.scss";
 
 function PhotoDetails() {
   const { photoId } = useParams();
@@ -10,7 +10,7 @@ function PhotoDetails() {
   const getCommentsById = async (id) => {
     try {
       const commentsResponse = await axios.get(
-             `http://localhost:8888/api/photos/${id}/comments`
+        `http://localhost:8888/api/photos/${id}/comments`
       );
       const sortedComments = commentsResponse.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
@@ -23,7 +23,6 @@ function PhotoDetails() {
   useEffect(() => {
     getCommentsById(photoId);
   }, [photoId]);
-
 
   return (
     <>
@@ -56,5 +55,3 @@ function PhotoDetails() {
 }
 
 export default PhotoDetails;
-
-

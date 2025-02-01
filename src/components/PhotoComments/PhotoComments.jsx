@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../PhotoForm/PhotoForm.scss";
+import "../PhotoComments/PhotoComments.scss";
 
 function PhotoComments() {
-
   const [newComments, setNewComments] = useState([]);
   const { photoId } = useParams();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const username = form.username.value;
-        const comment = form.commentText.value;
-    
-        const newComment = {
-          name: username,
-          comment: comment,
-        };
-    
-        addComment(newComment);
-      };
-    
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const username = form.username.value;
+    const comment = form.commentText.value;
+
+    const newComment = {
+      name: username,
+      comment: comment,
+    };
+
+    addComment(newComment);
+  };
+
   const addComment = async (newComment) => {
     try {
       // Send new comment to the backend
@@ -29,12 +28,12 @@ function PhotoComments() {
         `http://localhost:8888/api/photos/${photoId}/comments`,
         newComment
       );
-  
+
       // After the comment is added, fetch the updated list of comments
       const response = await axios.get(
         `http://localhost:8888/api/photos/${photoId}/comments`
       );
-      
+
       // Update state with the new list of comments
       setNewComments(response.data);
     } catch (error) {
@@ -44,7 +43,6 @@ function PhotoComments() {
 
   return (
     <>
-
       <section className="form">
         <form onSubmit={handleSubmit} className="form__section">
           <div>
@@ -81,7 +79,6 @@ function PhotoComments() {
           </div>
         </form>
       </section>
-
     </>
   );
 }

@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment {
+  padding: 0;
+  padding-bottom: 4em;
+
+  @include tablet {
+    padding: 0em 10em;
+  }
+  &__text {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__title {
+    color: $secondary-color;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+  }
+}
+
+.form__input--comment {
+  height: 5em;
+}
