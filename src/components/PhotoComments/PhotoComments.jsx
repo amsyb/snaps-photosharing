@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../PhotoForm/PhotoForm.scss";
 
-const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
+// const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
 
 function PhotoComments() {
 
@@ -27,7 +27,7 @@ function PhotoComments() {
       const addComment = async (newComment) => {
         try {
           const newCommentsResponse = await axios.post(
-            `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`,
+            `http://localhost:8888/api/photos/${photoId}/comments`,
             newComment
           );
           setNewComments(newCommentsResponse.data);

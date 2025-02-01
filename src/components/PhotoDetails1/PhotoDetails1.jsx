@@ -3,29 +3,25 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../PhotoForm/PhotoForm.scss";
 
-const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
-
 function PhotoDetails() {
   const { photoId } = useParams();
   const [comments, setComments] = useState([]);
 
-  const getCommentsById = async () => {
+  const getCommentsById = async (id) => {
     try {
       const commentsResponse = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${photoId}/comments?api_key=${API_KEY}`
+             `http://localhost:8888/api/photos/${id}/comments`
       );
       const sortedComments = commentsResponse.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
       );
       setComments(sortedComments);
-
-      setComments(commentsResponse.data);
     } catch (error) {
       console.error("Error fetching comments by ID", error);
     }
   };
   useEffect(() => {
-    getCommentsById();
+    getCommentsById(photoId);
   }, [photoId]);
 
 
