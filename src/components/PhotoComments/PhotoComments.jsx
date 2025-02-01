@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../PhotoForm/PhotoForm.scss";
 
-// const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
-
 function PhotoComments() {
 
   const [newComments, setNewComments] = useState([]);
@@ -24,17 +22,25 @@ function PhotoComments() {
         addComment(newComment);
       };
     
-      const addComment = async (newComment) => {
-        try {
-          const newCommentsResponse = await axios.post(
-            `http://localhost:8888/api/photos/${photoId}/comments`,
-            newComment
-          );
-          setNewComments(newCommentsResponse.data);
-        } catch (error) {
-          console.error("An error occurred:", error);
-        }
-      };
+  const addComment = async (newComment) => {
+    try {
+      // Send new comment to the backend
+      await axios.post(
+        `http://localhost:8888/api/photos/${photoId}/comments`,
+        newComment
+      );
+  
+      // After the comment is added, fetch the updated list of comments
+      const response = await axios.get(
+        `http://localhost:8888/api/photos/${photoId}/comments`
+      );
+      
+      // Update state with the new list of comments
+      setNewComments(response.data);
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
 
   return (
     <>
