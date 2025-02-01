@@ -4,18 +4,16 @@ import axios from "axios";
 import "../PhotoId/PhotoId.scss";
 import likeIcon from "../../assets/images/Like_Outline.svg";
 
-// const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
 function PhotoId() {
   const { photoId } = useParams();
   const [photo, setPhoto] = useState({});
 
-  const getPhotoById = async (photo) => {
+  const getPhotoById = async (id) => {
     try {
       const response = await axios.get(
-        // `https://unit-3-project-c5faaab51857.herokuapp.com/photos/${id}?api_key=${API_KEY}`
-        `http://localhost:8888/api/photos/${photo}`
+        `http://localhost:8888/api/photos/endpoint2/${id}`
       );
-      setPhoto(response.data);
+      setPhoto(response.data.photo);
     } catch (error) {
       console.error("Error fetching photos by ID", error);
     }
