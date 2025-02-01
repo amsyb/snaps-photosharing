@@ -2,8 +2,6 @@ import "./Filter.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const API_KEY = "6e44d21f-2f0a-42a6-bd89-1adacd11a126";
-
 function Filter({ activeFilter, setActiveFilter }) {
   const [tags, setTags] = useState([]);
 
@@ -18,7 +16,7 @@ function Filter({ activeFilter, setActiveFilter }) {
   const getTags = async () => {
     try {
       const response = await axios.get(
-        `https://unit-3-project-c5faaab51857.herokuapp.com/tags?api_key=${API_KEY}`
+        `http://localhost:8888/api/tags`
       );
       setTags(response.data);
     } catch (error) {
