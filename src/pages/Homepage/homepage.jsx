@@ -20,7 +20,6 @@ function Homepage() {
     }
 
   useEffect(() => {
-  // console.log("Fetched tags:", tag);
     getTags()
       })
  
