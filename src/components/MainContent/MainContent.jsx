@@ -3,6 +3,7 @@ import Filter from "../Filter/Filter";
 import Hero from "../Hero/Hero";
 import "./MainContent.scss";
 import PhotoList from "../PhotoList/PhotoList";
+import "../../styles/partials/_global.scss";
 
 function MainContent({ filtersOpen }) {
   const [activeFilter, setActiveFilter] = useState(null);
