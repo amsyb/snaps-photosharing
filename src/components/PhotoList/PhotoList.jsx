@@ -18,7 +18,7 @@ const NewPhotoList = ({ activeFilter }) => {
   const getPhotos = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/photos/endpoint2`
+        `http://localhost:8888/api/photos`
       );
       setPhotos(response.data);
     } catch (error) {

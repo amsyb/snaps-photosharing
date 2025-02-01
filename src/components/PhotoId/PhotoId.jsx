@@ -11,9 +11,9 @@ function PhotoId() {
   const getPhotoById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:8888/api/photos/endpoint2/${id}`
+        `http://localhost:8888/api/photos/${id}`
       );
-      setPhoto(response.data.photo);
+      setPhoto(response.data);
     } catch (error) {
       console.error("Error fetching photos by ID", error);
     }
