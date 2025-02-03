@@ -4,13 +4,14 @@ import axios from "axios";
 import "../PhotoDetails1/PhotoDetails1.scss";
 
 function PhotoDetails() {
+  const base_URL = import.meta.env.VITE_API_URL;
   const { photoId } = useParams();
   const [comments, setComments] = useState([]);
 
   const getCommentsById = async (id) => {
     try {
       const commentsResponse = await axios.get(
-        `http://localhost:8888/api/photos/${id}/comments`
+        `${base_URL}/api/photos/${id}/comments`
       );
       const sortedComments = commentsResponse.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)

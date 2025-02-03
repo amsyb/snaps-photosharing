@@ -5,14 +5,13 @@ import "../PhotoId/PhotoId.scss";
 import likeIcon from "../../assets/images/Like_Outline.svg";
 
 function PhotoId() {
+  const base_URL = import.meta.env.VITE_API_URL;
   const { photoId } = useParams();
   const [photo, setPhoto] = useState({});
 
   const getPhotoById = async (id) => {
     try {
-      const response = await axios.get(
-        `http://localhost:8888/api/photos/${id}`
-      );
+      const response = await axios.get(`${base_URL}/api/photos/${id}`);
       setPhoto(response.data);
     } catch (error) {
       console.error("Error fetching photos by ID", error);

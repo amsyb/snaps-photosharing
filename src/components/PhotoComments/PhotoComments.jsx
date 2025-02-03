@@ -4,6 +4,7 @@ import axios from "axios";
 import "../PhotoComments/PhotoComments.scss";
 
 function PhotoComments() {
+  const base_URL = import.meta.env.VITE_API_URL;
   const [newComments, setNewComments] = useState([]);
   const { photoId } = useParams();
 
@@ -23,18 +24,15 @@ function PhotoComments() {
 
   const addComment = async (newComment) => {
     try {
-      // Send new comment to the backend
       await axios.post(
-        `http://localhost:8888/api/photos/${photoId}/comments`,
+        `${base_URL}/api/photos/${photoId}/comments`,
         newComment
       );
 
-      // After the comment is added, fetch the updated list of comments
       const response = await axios.get(
-        `http://localhost:8888/api/photos/${photoId}/comments`
+        `${base_URL}/api/photos/${photoId}/comments`
       );
 
-      // Update state with the new list of comments
       setNewComments(response.data);
     } catch (error) {
       console.error("An error occurred:", error);

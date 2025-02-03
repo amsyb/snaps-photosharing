@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import PhotoCard from "../PhotoCard/PhotoCard";
 
 const NewPhotoList = ({ activeFilter }) => {
+  const base_URL = import.meta.env.VITE_API_URL;
   const [photos, setPhotos] = useState([]);
 
   let filteredPhotos = photos.filter((photo) => {
@@ -17,15 +18,12 @@ const NewPhotoList = ({ activeFilter }) => {
 
   const getPhotos = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8888/api/photos`
-      );
+      const response = await axios.get(`${base_URL}/api/photos`);
       setPhotos(response.data);
     } catch (error) {
       console.log("Error fetching photos", error);
     }
   };
- 
 
   useEffect(() => {
     getPhotos();
@@ -33,12 +31,11 @@ const NewPhotoList = ({ activeFilter }) => {
 
   return (
     <div className="photo__list">
-    {filteredPhotos.map((photo) => {
-      return <PhotoCard key={photo.id} photo={photo} />;
-    })}
-  </div>
+      {filteredPhotos.map((photo) => {
+        return <PhotoCard key={photo.id} photo={photo} />;
+      })}
+    </div>
   );
 };
 
 export default NewPhotoList;
-

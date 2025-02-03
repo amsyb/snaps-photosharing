@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 function Filter({ activeFilter, setActiveFilter }) {
   const [tags, setTags] = useState([]);
+  const base_URL = import.meta.env.VITE_API_URL;
 
   const handleFilterClick = (tagClicked) => {
     if (tagClicked === activeFilter) {
@@ -15,9 +16,7 @@ function Filter({ activeFilter, setActiveFilter }) {
 
   const getTags = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8888/api/tags`
-      );
+      const response = await axios.get(`${base_URL}/api/tags`);
       setTags(response.data);
     } catch (error) {
       console.log("Error fetching tags", error);

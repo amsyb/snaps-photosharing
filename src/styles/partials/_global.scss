@@ -1,6 +1,6 @@
-@use "./typography";
-@use "./mixins" as *;
 @use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography";
 
 * {
   box-sizing: border-box;
@@ -34,9 +34,8 @@ button {
   border: none;
 }
 
-
 input[type="text"] {
-  font-family: 'Outfit Light';
+  font-family: "Outfit Light";
   border: 1px solid $border-color;
   padding: 0.5em;
 
@@ -55,7 +54,7 @@ input[type="text"] {
 }
 
 textarea {
-  font-family: 'Outfit Light';
+  font-family: "Outfit Light";
   border: 1px solid $border-color;
   resize: none;
   padding: 0.5em;
