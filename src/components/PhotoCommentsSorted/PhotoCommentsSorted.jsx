@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../PhotoDetails1/PhotoDetails1.scss";
+import PhotoComments from "../PhotoComments/PhotoComments";
+import "./PhotoDetails1.scss";
 
 function PhotoDetails() {
   const base_URL = import.meta.env.VITE_API_URL;
   const { photoId } = useParams();
   const [comments, setComments] = useState([]);
 
-  const getCommentsById = async (id) => {
+  const getCommentsById = async () => {
     try {
-      const commentsResponse = await axios.get(
-        `${base_URL}/api/photos/${id}/comments`
+      const response = await axios.get(
+        `${base_URL}/api/photos/${photoId}/comments`
       );
-      const sortedComments = commentsResponse.data.sort(
+      const sortedComments = response.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
       );
       setComments(sortedComments);
@@ -21,12 +22,15 @@ function PhotoDetails() {
       console.error("Error fetching comments by ID", error);
     }
   };
+
   useEffect(() => {
-    getCommentsById(photoId);
+    getCommentsById();
   }, [photoId]);
 
   return (
     <>
+      <PhotoComments newComments={getCommentsById} />
+
       <section className="comment">
         <h2 className="body comment__text">
           {comments.length === 1 ? "1 Comment" : `${comments.length} Comments`}

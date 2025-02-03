@@ -1,83 +1,87 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../PhotoComments/PhotoComments.scss";
 
-function PhotoComments() {
+function PhotoComments({ newComments }) {
   const base_URL = import.meta.env.VITE_API_URL;
-  const [newComments, setNewComments] = useState([]);
   const { photoId } = useParams();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const username = form.username.value;
-    const comment = form.commentText.value;
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
 
-    const newComment = {
-      name: username,
-      comment: comment,
-    };
-
-    addComment(newComment);
+  const handleChangeName = (e) => {
+    setName(e.target.value);
   };
 
-  const addComment = async (newComment) => {
+  const handleChangeComment = (e) => {
+    setComment(e.target.value);
+  };
+
+  const isFormValid = () => name.trim() || comment.trim();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!isFormValid()) {
+      console.error("Error: Fields cannot be empty.");
+      return;
+    }
+
+    const newComment = { name, comment };
+
     try {
       await axios.post(
         `${base_URL}/api/photos/${photoId}/comments`,
         newComment
       );
-
-      const response = await axios.get(
-        `${base_URL}/api/photos/${photoId}/comments`
-      );
-
-      setNewComments(response.data);
+      setName("");
+      setComment("");
+      newComments();
     } catch (error) {
       console.error("An error occurred:", error);
     }
   };
 
   return (
-    <>
-      <section className="form">
-        <form onSubmit={handleSubmit} className="form__section">
-          <div>
-            <div className="form__title">
-              <label htmlFor="username" className="body">
-                Name
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                className="form__input"
-                required
-              />
-            </div>
+    <section className="form">
+      <form onSubmit={handleSubmit} className="form__section">
+        <div className="form__title">
+          <label htmlFor="username" className="body">
+            Name
+          </label>
+          <input
+            id="username"
+            name="username"
+            value={name}
+            onChange={handleChangeName}
+            type="text"
+            className="form__input"
+            required
+          />
+        </div>
 
-            <div className="form__title">
-              <label htmlFor="commentText" className="body">
-                Comment
-              </label>
-              <textarea
-                id="commentText"
-                name="commentText"
-                type="text"
-                className="form__input form__input--comment"
-                required
-              />
-            </div>
-          </div>
-          <div className="form__button">
-            <button type="submit" className="body-button">
-              Submit
-            </button>
-          </div>
-        </form>
-      </section>
-    </>
+        <div className="form__title">
+          <label htmlFor="commentText" className="body">
+            Comment
+          </label>
+          <textarea
+            id="commentText"
+            name="commentText"
+            value={comment}
+            onChange={handleChangeComment}
+            className="form__input form__input--comment"
+            required
+          />
+        </div>
+
+        <div className="form__button">
+          <button type="submit" className="body-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </section>
   );
 }
 
