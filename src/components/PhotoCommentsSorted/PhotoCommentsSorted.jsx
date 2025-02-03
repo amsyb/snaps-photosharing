@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import PhotoComments from "../PhotoComments/PhotoComments";
-import "./PhotoDetails1.scss";
+import "./PhotoCommentsSorted.scss";
 
 function PhotoDetails() {
   const base_URL = import.meta.env.VITE_API_URL;
