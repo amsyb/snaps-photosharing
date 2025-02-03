@@ -29,7 +29,8 @@
     position: relative;
     width: 100%;
 
-    @include tablet {}
+    @include tablet {
+    }
   }
 
   &__img {
@@ -74,7 +75,7 @@
     align-items: center;
     color: $primary-color;
     background-color: $alt-text;
-    padding: 6px 8px;
+    padding: 0.375em 0.5em;
     border: 1px solid $border-color;
     border-radius: 12px;
 
